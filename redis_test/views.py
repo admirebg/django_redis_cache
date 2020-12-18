@@ -5,6 +5,10 @@ from django.core.cache import cache
 
 
 def my_view(request):
-    # posts = Post.objects.filter(id__lte=10000).values('id', 'text')
-    posts = cache.get_or_set('posts', Post.objects.filter(id__lte=10000).values('id', 'text'))
-    return JsonResponse(list(posts), safe=False)
+    # cache.delete('posts')
+    # posts = cache.get('posts')
+    # if not posts:
+    #     posts = list(Post.objects.filter(id__lte=10000).values('id', 'text'))
+    #     cache.set('posts', posts)
+    posts = list(Post.objects.filter(id__lte=10000).values('id', 'text'))
+    return JsonResponse(posts, safe=False)
