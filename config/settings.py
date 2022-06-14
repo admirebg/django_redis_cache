@@ -84,8 +84,8 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        # 'LOCATION': 'redis://127.0.0.1:6379/1',
-        'LOCATION': 'redis://redis1.krxkng.0001.apn2.cache.amazonaws.com:6379',
+        #'LOCATION': 'redis://127.0.0.1:6379/1',
+        'LOCATION': 'redis://redis-test-for-autoscaling.7szn8z.ng.0001.apn2.cache.amazonaws.com:6379',
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
